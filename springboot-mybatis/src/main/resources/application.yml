@@ -1,0 +1,37 @@
+server:
+  port: 3600
+
+spring:
+  # 服务名
+  application:
+    name: spring-mybatis
+  # 数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///test
+    username: root
+    password: root
+  # redis
+  redis:
+    host: 115.231.174.235
+    port: 16379
+    database: 6
+    timeout: 60s
+    password: ctp%^2020
+    # 连接池配置，2.0中使用jedis或lettuce配置连接池
+    jedis:
+      pool:
+        # 最大活跃数 不限制
+        max-active: -1
+        max-idle: 500
+        max-wait: -1s
+        min-idle: 50
+
+# mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.yt.springbootmybatis.model
+
+logging:
+  level:
+    com.yt.springbootmybatis.mapper: debug

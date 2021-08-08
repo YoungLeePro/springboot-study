@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yt.springbootmybatis.mapper.IndexTestMapper">
+
+    <insert id="insert" parameterType="com.yt.springbootmybatis.model.IndexTest">
+        insert into index_test(id, name, descr, num) values(#{indexTest.id}, #{indexTest.name}, #{indexTest.descr}, #{indexTest.num})
+    </insert>
+
+
+</mapper>

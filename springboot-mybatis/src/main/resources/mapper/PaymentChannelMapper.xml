@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yt.springbootmybatis.mapper.PaymentChannelMapper">
+
+    <select id="getById" parameterType="Integer" resultType="com.yt.springbootmybatis.model.PaymentChannel">
+        select ID as id, CHANNEL_NAME as channelName, CHANNEL_ID as channelId, strategy_bean_id as strategyBeanId from payment_channel where id = #{id}
+    </select>
+
+    <select id="getByChannelId" parameterType="String" resultType="com.yt.springbootmybatis.model.PaymentChannel">
+        select ID as id, CHANNEL_NAME as channelName, CHANNEL_ID as channelId, strategy_bean_id as strategyBeanId from payment_channel where CHANNEL_ID = #{channelId}
+    </select>
+</mapper>
