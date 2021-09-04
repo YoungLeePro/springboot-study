@@ -1,1 +1,17 @@
+server:
+  port: 8088
 
+spring:
+  application:
+    name: spring-rocketmq
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///test
+    username: root
+    password: root
+
+  rocketmq:
+    name-server: 10.211.55.16:9876;
+    producer:
+      groupt: test-producer
+      send-message-timeout: 5000
