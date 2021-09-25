@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * @author liyang
  */
@@ -19,6 +21,7 @@ public class TestController {
     @RequestMapping("sendMsg")
     public String sendMsg(){
         rocketMQTemplate.convertAndSend("myTest", JSONObject.toJSONString(new User(1, "llllll")));
+        new ReentrantLock();
         return null;
     }
 }
